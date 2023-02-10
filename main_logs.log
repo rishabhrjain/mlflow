@@ -1,0 +1,19 @@
+INFO:root:Reading data
+INFO:root:Initiaize the data processor and set to training mode
+INFO:root:train data rows: 48546, test data rows: 5394
+INFO:root:processing training data and fitting encoders ..
+INFO:root:
+ classification report: 
+               precision    recall  f1-score   support
+
+        Fair       0.88      0.89      0.88       140
+        Good       0.88      0.65      0.75       498
+       Ideal       0.82      0.93      0.87      2185
+     Premium       0.65      0.85      0.74      1380
+   Very Good       0.72      0.35      0.47      1191
+
+    accuracy                           0.76      5394
+   macro avg       0.79      0.73      0.74      5394
+weighted avg       0.76      0.76      0.74      5394
+
+INFO:root:Finished model training

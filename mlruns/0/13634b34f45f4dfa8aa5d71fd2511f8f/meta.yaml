@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/shaha/Desktop/Rishabh/projects/practice/MLE/mlflow/mlruns/0/13634b34f45f4dfa8aa5d71fd2511f8f/artifacts
+end_time: 1676012694568
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 13634b34f45f4dfa8aa5d71fd2511f8f
+run_name: adorable-mule-923
+run_uuid: 13634b34f45f4dfa8aa5d71fd2511f8f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676012543565
+status: 4
+tags: []
+user_id: shaha
