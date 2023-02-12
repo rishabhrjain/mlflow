@@ -37,5 +37,5 @@ For setup, having conda installed should siffuce. You can create a new conda env
 
 ## Future development
 
-1. Model deployment (Batch processing and Real-time processing)
+1. Model deployment (Batch and Real-time predictions)
 2. Model lifecycle management (Having model registry with versions like staging, prod, etc)
