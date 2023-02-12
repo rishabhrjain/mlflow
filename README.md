@@ -31,7 +31,8 @@ For setup, having conda installed should siffuce. You can create a new conda env
 5. Inference predictions are posted in the data folder. Additionally you will see a mlruns folder that has details about yoour experiment logs. 
 6. Run "mlflow ui" to start a UI that shows all your results on a browser. 
 ![image](https://user-images.githubusercontent.com/24752688/218344345-e293c368-6615-4ae5-913b-6862f23f4929.png)
-![image](https://user-images.githubusercontent.com/24752688/218344426-4fd827c6-bd26-446b-9a5e-7f3bf74f7d9a.png)
+![image](https://user-images.githubusercontent.com/24752688/218344475-8a900410-8607-4e11-833f-2b24165991de.png)
+
 
 
 ## Future development
