@@ -15,15 +15,15 @@ class DataProcessor():
     """
     Class to process input data to make it suitable for model training. 
     """
-    def __init__(self, num_cols, binary_cols, categorical_cols, target_col, mode):
+    def __init__(self, num_cols, binary_cols, categorical_cols, target_col, data_dir, artifacts_dir, mode):
         self.mode = mode
         self.num_cols = num_cols
         self.binary_cols = binary_cols
         self.cat_cols = categorical_cols
         self.target_col = target_col
         
-        self.DATA_DIR = './data'
-        self.MODEL_DIR = './model'
+        self.DATA_DIR = data_dir
+        self.ARTIFACTS_DIR = artifacts_dir
         
         self.encoders = {}
     
@@ -47,8 +47,8 @@ class DataProcessor():
 
         logging.info(f'train data rows: {self.train.shape[0]}, test data rows: {self.test.shape[0]}')
         
-        self.train.to_csv(self.DATA_DIR + '/train.csv')
-        self.test.to_csv(self.DATA_DIR + '/test.csv')
+        self.train.to_csv(self.DATA_DIR + '/train.csv', index=False)
+        self.test.to_csv(self.DATA_DIR + '/test.csv', index=False)
         
         return (self.train, self.test)
     
@@ -81,19 +81,19 @@ class DataProcessor():
                 
                 self.encoders[col] = enc
             
-            save_pkl(self.encoders, dir = self.MODEL_DIR,   filename = 'encoder.pkl')
-            save_pkl(df.columns.tolist(), dir = self.MODEL_DIR,   filename = 'train_columns.pkl')
+            save_pkl(self.encoders, dir = self.ARTIFACTS_DIR,   filename = 'encoder.pkl')
+            save_pkl(df.columns.tolist(), dir = self.ARTIFACTS_DIR,   filename = 'train_columns.pkl')
 
-            mlflow.log_artifact(local_path=self.MODEL_DIR + '/encoder.pkl')
-            mlflow.log_artifact(local_path=self.MODEL_DIR + '/train_columns.pkl')
+            mlflow.log_artifact(local_path=self.ARTIFACTS_DIR + '/encoder.pkl')
+            mlflow.log_artifact(local_path=self.ARTIFACTS_DIR + '/train_columns.pkl')
             # save column
             
             self.columns = df.columns.tolist()
         
         elif (self.mode == 'test'):
             # load encoders
-            self.encoders = load_pkl(dir = self.MODEL_DIR, filename = 'encoder.pkl')
-            self.columns = load_pkl(dir = self.MODEL_DIR, filename = 'train_columns.pkl')
+            self.encoders = load_pkl(dir = self.ARTIFACTS_DIR, filename = 'encoder.pkl')
+            self.columns = load_pkl(dir = self.ARTIFACTS_DIR, filename = 'train_columns.pkl')
             
             
         for col in self.cat_cols:

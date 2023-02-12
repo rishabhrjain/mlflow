@@ -1,0 +1,31 @@
+RANDOM_STATE: 40
+
+path:
+  data_dir: ./data
+  local_artifacts_dir: ./local_artifacts
+
+  dataset: diamonds.csv
+
+# details about data and the type of columns. Based on the type, we can apply encoders for data transformation:
+data:
+  num_cols: ['carat', 'depth', 'table', 'price', 'x', 'y', 'z']
+  binary_cols: []
+  cat_cols: ['color', 'clarity']
+  target_col: ['cut']
+
+  # data split ratio. Remaining split would be for train data
+  test_split_ratio: 0.1
+
+# placeholder - can also define the encoder to use for different types of columns
+
+# params to pass to model
+params:
+  random_forest:
+    n_estimators: [40, 50, 60]
+    max_depth: [8, 10, 12]
+
+  logistic:
+    c : [0.001, 0.01, 0.1]
+
+# metrics to use for evaluating the model
+metric: accuracy

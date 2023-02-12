@@ -4,7 +4,7 @@ channels:
 dependencies:
   - python=3.9
   - pip
-  - pip:
-    - mlflow>=1.0
-    - pandas
-    - scikit-learn
+  - mlflow>=1.0
+  - pandas
+  - scikit-learn
+    
