@@ -9,7 +9,7 @@ In this project, our aim is not to focus much on data analysis (EDA) or feature 
 The dataset used here is kaggle diamonds dataset. Link - https://www.kaggle.com/datasets/shivam2503/diamonds
 Given a set of features, our aim is to predict the quality of dimanond cut. It is a multiclass classification problem.
 
-## setup
+## Setup
 For setup, having conda installed should siffuce. You can create a new conda env or one would be created automatically upon running "mlflow run" by referring to conda.yaml
 
 ## Overall steps
@@ -30,9 +30,12 @@ For setup, having conda installed should siffuce. You can create a new conda env
 4. Run Inference.py - this finds the model with the best accuracy and uses it for predictions on Inference data (here I just again use test data since prod real time data isn't available)
 5. Inference predictions are posted in the data folder. Additionally you will see a mlruns folder that has details about yoour experiment logs. 
 6. Run "mlflow ui" to start a UI that shows all your results on a browser. 
+![image](https://user-images.githubusercontent.com/24752688/218344345-e293c368-6615-4ae5-913b-6862f23f4929.png)
+![image](https://user-images.githubusercontent.com/24752688/218344475-8a900410-8607-4e11-833f-2b24165991de.png)
+
 
 
 ## Future development
 
-1. Model deployment (Batch processing and Real-time processing)
+1. Model deployment (Batch and Real-time predictions)
 2. Model lifecycle management (Having model registry with versions like staging, prod, etc)
