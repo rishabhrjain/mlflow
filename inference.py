@@ -15,8 +15,7 @@ best_run_id = json.loads(obj)[0]['run_id']
 
 # load mlflow model with run_id
 logged_model = f'runs:/{best_run_id}/model'
-env = mlflow.pyfunc.get_model_dependencies(logged_model)
-print(env)
+
 # Load model as a PyFuncModel.
 loaded_model = mlflow.pyfunc.load_model(logged_model)
 
